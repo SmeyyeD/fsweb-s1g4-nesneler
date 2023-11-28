@@ -251,10 +251,20 @@ console.log(UzunDegerlendirmeleriAl(degerlendirmeler));
 */
 
 
-function arabaYapici(/* Kodlar buraya */) {
-    /* Kodlar buraya */
-    
+function arabaYapici(km) {
+	const araba = {
+		kilometre: km,
+		surus: function (yol) {
+			this.kilometre += yol;
+			return this.kilometre
+		},
+	};
+	return araba;
 }
+const araba1 = arabaYapici(40000);
+araba1.surus(400);
+araba1.surus(800);
+console.log(araba1.kilometre);
 
 
 /*  Buradan aşağıdaki kodları değiştirmeyin lütfen */
